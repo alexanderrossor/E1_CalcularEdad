@@ -2,54 +2,81 @@
 <!--  TODO (1) Cambiar ConstraintLayout por Linear Layout
     agregar propiedad de orientation igual a "vertical"
     eliminar etiqueta de xmlns:android (namespace) con su respectivo url  -->
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <!-- TODO (5) Modificar  propiedad del TextView layout_width y para que sea "match_parent"
     modificar propiedad text para que haga referencia al recurso tipo string "lblNombre"
     eliminar las propiedades con prefijo app
     -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:text="@string/lblnombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
     <!-- TODO (6) Agregar un elemento tipo EditText con propiedad layout_width que sea "match_parent",
         propiedad layout_height que sea "wrap_content"
         propiedad id que sea "@+id/nombre_persona"
         propiedad inputType que sea "text"
         propiedad hint que sea "nombre de la persona" -->
+    <EditText
+        android:id="@+id/nombre_persona"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de la Persona"
+        android:inputType="text"
+        ></EditText>
 
     <!-- TODO (7) Agregar un elemento tipo TextView con propiedad layout_width que sea "match_parent"
         propiedad layout_width que sea "wrap_content"
         y con propiedad text que haga referencia al recurso tipo string de fecha de nacimiento -->
-
+    <TextView
+        android:text="@string/lblfecha_nac"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></TextView>
     <!-- TODO (8) Agregar un elemento tipo DatePicker con propiedad layout_width que sea "match_parent"
         propiedad layout_height que sea "wrap_content"
         propiedad id que sea "@+id/date_of_birth"
         propiedad datePickerMode que sea "spinner"
         y propiedad calendarViewShown que sea "false" -->
+    <DatePicker
+        android:id="@+id/date_of_birth"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></DatePicker>
 
     <!-- TODO (9) Agregar un elemento tipo Button con propiedad layout_width que sea "match_parent"
         propiedad layout_height que sea "wrap_content"
         propiedad id que sea "@+id/calcular_edad"
         y propiedad text que haga referencia al recurso string del boton de calcular edad -->
-
+    <Button
+        android:id="@+id/calcular_edad"
+        android:text="@string/lblCarcular_edad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></Button>
     <!-- TODO (10) Agregar un elemento tipo TextView con propiedad layout_width que sea "match_parent"
         propiedad layout_height que sea "wrap_content"
         propiedad text sin valor especificado (vacio)
         propiedad layout_gravity que sea "center"
         y con propiedad id que sea "@+id/edad_actual"
         -->
+    <TextView
+        android:text=""
+        android:layout_gravity="center"
+        android:id="@+id/edad_actual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></TextView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
